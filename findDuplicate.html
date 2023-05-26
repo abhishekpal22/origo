@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Find Duplicated</h1>
+    <!-- <script>
+        const numberOfArray = [7, 2, 6, 8, 2, 7, 6, 99, 2, 88, 99, 5, 9, 1, 99, 1];
+        // let result = numberOfArray.sort()
+        for (let i=0; i<numberOfArray.length; i++){
+            for(let j=0; j<numberOfArray.length; j++){
+                if(numberOfArray[i]<numberOfArray[j]){
+                    numberOfArray[i]=numberOfArray[j]+numberOfArray[i];
+                    numberOfArray[j]=numberOfArray[i]-numberOfArray[j];
+                    numberOfArray[i]=numberOfArray[i]-numberOfArray[j];
+                }
+            }
+
+        }
+        console.log(numberOfArray);
+
+        let arr =[];
+        for(let k=0; k<numberOfArray.length; k++){
+                let y = 0;
+            for(let x = k+1; x<numberOfArray.length-1; x++){
+                if(numberOfArray[k] == numberOfArray[x] ){
+                    y++;
+                }
+                if(y>0){
+                    arr.push(numberOfArray[k])
+                    console.log(numberOfArray[k]);
+                    k=k+y+1;
+                }
+            }
+        }
+         console.log(arr);
+        
+    </script> -->
+
+
+<script>
+    const numberOfArray = [7, 2, 6, 8, 2, 7, 6, 99, 2, 88, 99, 5, 9, 1, 99, 1];
+const duplicates = [];
+
+for (let i = 0; i < numberOfArray.length; i++) {
+  for (let j = i + 1; j < numberOfArray.length; j++) {
+    if (numberOfArray[i] === numberOfArray[j]) {
+      if (!duplicates.includes(numberOfArray[i])) {
+        duplicates.push(numberOfArray[i]);
+      }
+      break; 
+    }
+  }
+}
+
+
+duplicates.sort((a, b) => a - b);
+
+console.log(duplicates); 
+
+</script>
+</body>
+</html>
